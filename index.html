@@ -19,6 +19,110 @@
   <!-- 오픈그래프 및 디스크립션 끝 -->
   <title>다움연구소 - 개인과 조직의 다움을 발견하고 세우는 곳</title>
   <style>
+    /* 성공 케이스 스타일 */
+    .success_cases {
+      padding: 100px 0;
+      background: #f5f9ff;
+    }
+    
+    .success_cases .cases_con {
+      margin-top: 50px;
+    }
+    
+    .success_cases ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    
+    .success_cases ul li {
+      width: 50%;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .success_cases ul li a {
+      display: block;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      height: 100%;
+    }
+    
+    .success_cases ul li a:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .success_cases ul li .pic {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .success_cases ul li .pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s;
+    }
+    
+    .success_cases ul li a:hover .pic img {
+      transform: scale(1.05);
+    }
+    
+    .success_cases ul li .txt {
+      padding: 30px;
+    }
+    
+    .success_cases ul li .tag {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    
+    .success_cases ul li .tag span {
+      display: inline-block;
+      padding: 5px 10px;
+      background: #4A90E2;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 20px;
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .success_cases ul li .tag span:nth-child(2) {
+      background: #83C0FF;
+    }
+    
+    .success_cases ul li strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    
+    .success_cases ul li p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .success_cases .btn_box {
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .success_cases ul li {
+        width: 100%;
+      }
+    }
+    
     /* 공통 스타일 */
     * {
       margin: 0;
@@ -738,6 +842,76 @@
         <strong>당신의 <em>다움</em>을 <br class="mo_br">발견하셨나요?</strong>
         <p>삶의 방향을 잃은 사람들, 정체성 혼란을 겪는 청년들, <br>조직의 본질을 잊은 기업들이 <em>본연의 존재 이유를 회복</em>하도록 돕습니다.</p>
         <span>당신의 <em>진정한 경쟁력은 자신만의 다움</em>입니다.</span>
+      </div>
+    </div>
+    
+    <!-- 성공 케이스 섹션 -->
+    <div class="success_cases">
+      <div class="n_wrapper">
+        <div class="new_comontit">
+          <em>SUCCESS STORIES</em>
+          <h3><strong>다움을 찾고 성장한 <br>사람들의 이야기</strong></h3>
+          <p>다움연구소의 프로그램을 통해 자신만의 정체성을 발견하고<br>성장한 20-30대들의 실제 사례입니다.</p>
+        </div>
+        <div class="cases_con">
+          <ul>
+            <li>
+              <a href="#">
+                <p class="pic"><img src="https://via.placeholder.com/400x300/4A90E2/FFFFFF" alt="김지원의 사례"></p>
+                <div class="txt">
+                  <div class="tag">
+                    <span>개인 다움 컨설팅</span>
+                    <span>27세 마케터</span>
+                  </div>
+                  <strong>남들과 같은 길을 가는 것이 불안했습니다</strong>
+                  <p>"적성에 맞지 않는 일을 하며 불안감에 시달렸는데, 다움연구소를 통해 제 강점을 발견하고 새로운 커리어를 시작했습니다. 이제는 매일 아침이 기다려집니다."</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p class="pic"><img src="https://via.placeholder.com/400x300/83C0FF/FFFFFF" alt="박현우의 사례"></p>
+                <div class="txt">
+                  <div class="tag">
+                    <span>지식 구독 플랫폼</span>
+                    <span>32세 프리랜서</span>
+                  </div>
+                  <strong>3년간 방황 끝에 찾은 나만의 브랜드</strong>
+                  <p>"여러 직업을 전전하며 정체성에 혼란을 겪고 있었습니다. 다움연구소의 뉴스레터를 6개월간 구독하며 제 강점을 체계적으로 발견했고, 지금은 제 이름을 건 사업을 시작했습니다."</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p class="pic"><img src="https://via.placeholder.com/400x300/2C3E50/FFFFFF" alt="이수진의 사례"></p>
+                <div class="txt">
+                  <div class="tag">
+                    <span>정체성 진단 키트</span>
+                    <span>25세 대학원생</span>
+                  </div>
+                  <strong>학업과 꿈 사이에서 길을 찾았습니다</strong>
+                  <p>"대학원 공부와 제가 정말 하고 싶은 일 사이에서 갈등했어요. 정체성 진단 키트를 통해 저의 핵심 가치를 발견하고 두 가지를 조화롭게 병행할 수 있는 방법을 찾았습니다."</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p class="pic"><img src="https://via.placeholder.com/400x300/FFF176/333333" alt="정민호의 사례"></p>
+                <div class="txt">
+                  <div class="tag">
+                    <span>커리어 코칭</span>
+                    <span>29세 직장인</span>
+                  </div>
+                  <strong>매일 반복되는 일상에서 의미를 찾았습니다</strong>
+                  <p>"똑같은 업무의 반복으로 번아웃을 겪고 있었습니다. 다움연구소의 코칭을 통해 제 일의 의미를 재발견하고, 업무 방식을 제 방식으로 재구성했더니 성과도 오르고 만족도도 높아졌습니다."</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="btn_box">
+          <a href="#" class="comon_btn">더 많은 성공 사례 보기</a>
+        </div>
       </div>
     </div>
     
