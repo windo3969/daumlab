@@ -1,15 +1,26 @@
 :root {
-  --primary: #0A2342;       /* 딥 네이비 - 더 어둡게 조정 */
-  --primary-light: #1E3A5F; /* 중간 네이비 */
-  --primary-dark: #051631;  /* 더 어두운 네이비 */
-  --secondary: #D4AF37;     /* 골드/금색 */
-  --secondary-light: #E5C76B; /* 연한 골드 */
-  --dark: #1A2130;          /* 진한 차콜 그레이 */
-  --gray: #5C6B7A;          /* 중간 블루 그레이 */
-  --light-gray: #EDF2F7;    /* 연한 블루 그레이 */
-  --cream: #F9F7F5;         /* 크림색 (대체 배경) */
-  --white: #FFFFFF;         /* 화이트 */
-  --accent: #C8553D;        /* 강조색 (딥 레드) */
+  --primary: #0A2342;
+  /* 딥 네이비 - 더 어둡게 조정 */
+  --primary-light: #1E3A5F;
+  /* 중간 네이비 */
+  --primary-dark: #051631;
+  /* 더 어두운 네이비 */
+  --secondary: #D4AF37;
+  /* 골드/금색 */
+  --secondary-light: #E5C76B;
+  /* 연한 골드 */
+  --dark: #1A2130;
+  /* 진한 차콜 그레이 */
+  --gray: #5C6B7A;
+  /* 중간 블루 그레이 */
+  --light-gray: #EDF2F7;
+  /* 연한 블루 그레이 */
+  --cream: #F9F7F5;
+  /* 크림색 (대체 배경) */
+  --white: #FFFFFF;
+  /* 화이트 */
+  --accent: #C8553D;
+  /* 강조색 (딥 레드) */
 }
 
 body {
@@ -523,13 +534,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(212, 175, 55, 0.05),
-    rgba(212, 175, 55, 0.05) 10px,
-    transparent 10px,
-    transparent 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      rgba(212, 175, 55, 0.05),
+      rgba(212, 175, 55, 0.05) 10px,
+      transparent 10px,
+      transparent 20px);
 }
 
 .vision-card {
@@ -1008,6 +1017,233 @@ footer::before {
   font-family: 'Playfair Display', serif;
 }
 
+/* 요금제 섹션 스타일 */
+.pricing {
+  background-color: var(--cream);
+  position: relative;
+}
+
+.pricing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(10, 35, 66, 0.02) 0%, rgba(10, 35, 66, 0) 70%);
+}
+
+.pricing-card {
+  background-color: var(--white);
+  border-radius: 0;
+  padding: 0;
+  height: 100%;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.pricing-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.active {
+  border: none;
+  z-index: 2;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+}
+
+.pricing-card.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--secondary);
+}
+
+.pricing-header {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
+.pricing-price {
+  margin-bottom: 1.5rem;
+}
+
+.pricing-price .currency {
+  font-size: 1.5rem;
+  font-weight: 500;
+  vertical-align: top;
+  color: var(--primary);
+  margin-right: 0.2rem;
+}
+
+.pricing-price .amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
+.pricing-price .period {
+  font-size: 1rem;
+  color: var(--gray);
+  margin-left: 0.2rem;
+}
+
+.pricing-description {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.pricing-features {
+  padding: 2rem;
+}
+
+.pricing-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-features li {
+  padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-features li i {
+  color: var(--secondary);
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+.pricing-features li.disabled {
+  opacity: 0.6;
+}
+
+.pricing-features li.disabled i {
+  color: var(--gray);
+}
+
+.pricing-features li span {
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+
+.pricing-footer {
+  padding: 0 2rem 2.5rem;
+  text-align: center;
+}
+
+.btn-pricing {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 0;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.btn-pricing:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.btn-pricing.active {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--primary-dark);
+}
+
+.btn-pricing.active:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--secondary);
+  color: var(--primary-dark);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pricing-badge.free {
+  background-color: var(--light-gray);
+  color: var(--primary);
+}
+
+.pricing-badge.enterprise {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.pricing-note {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-top: 2rem;
+}
+
+.pricing-note a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.pricing-note a:hover {
+  color: var(--secondary);
+}
+
 /* 반응형 스타일 */
 @media (max-width: 991.98px) {
   .section-title {
@@ -1029,15 +1265,15 @@ footer::before {
   .philosophy-content {
     padding: 3rem;
   }
-  
+
   .quote {
     font-size: 1.25rem;
   }
-  
+
   .slideshow-container {
     max-width: 90%;
   }
-  
+
   .slide {
     height: 500px;
   }
@@ -1097,24 +1333,24 @@ footer::before {
   .quote {
     font-size: 1.1rem;
   }
-  
-  .value-card, 
-  .business-card, 
+
+  .value-card,
+  .business-card,
   .vision-card {
     padding: 2rem;
   }
-  
+
   .contact-form {
     padding: 2.5rem;
   }
-  
+
   .prev-btn,
   .next-btn {
     width: 45px;
     height: 45px;
     font-size: 20px;
   }
-  
+
   .slide {
     height: 400px;
   }
@@ -1124,35 +1360,62 @@ footer::before {
   .section-padding {
     padding: 4rem 0;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
   }
-  
+
   .main-visual-title {
     font-size: 2.2rem;
   }
-  
+
   .proposal-title {
     font-size: 1.8rem;
   }
-  
+
   .proposal-description {
     font-size: 1.1rem;
   }
-  
-  .case-card, 
-  .value-card, 
-  .business-card, 
+
+  .case-card,
+  .value-card,
+  .business-card,
   .vision-card {
     margin-bottom: 15px;
   }
-  
+
   .philosophy-content {
     padding: 2rem;
   }
-  
+
   .slide {
     height: 300px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .pricing-title {
+    font-size: 1.4rem;
+  }
+
+  .pricing-price .amount {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pricing-card {
+    margin-bottom: 2rem;
+  }
+
+  .pricing-card.active {
+    transform: scale(1.03);
+  }
+
+  .pricing-header,
+  .pricing-features,
+  .pricing-footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }

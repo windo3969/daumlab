@@ -29,7 +29,9 @@
   <!-- Google Fonts - Noto Sans KR & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
   <!-- 커스텀 CSS -->
   <link rel="stylesheet" href="css/style.css">
@@ -459,6 +461,179 @@
     </div>
   </section>
 
+  <!-- 요금제 섹션 -->
+  <section class="section-padding pricing" id="pricing">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">OUR PRICING</span>
+        <h2 class="section-title">당신에게 맞는 요금제를 선택하세요</h2>
+        <p class="section-description">다움연구소는 개인과 조직의 상황과, 목표에 맞는 다양한 요금제를 제공합니다</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 체험 요금제 -->
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-title">체험판</h3>
+              <div class="pricing-price">
+                <span class="currency">₩</span>
+                <span class="amount">0</span>
+                <span class="period">/평생</span>
+              </div>
+              <p class="pricing-description">다움연구소를 처음 접하는 분들을 위한 무료 체험 요금제입니다</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>기본 정체성 진단 테스트</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>월 1회 웨비나 참석 기회</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>다움 뉴스레터 기본 구독</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>커뮤니티 접근 권한</span>
+                </li>
+                <li class="disabled">
+                  <i class="bi bi-x-circle"></i>
+                  <span>맞춤형 정체성 진단 보고서</span>
+                </li>
+                <li class="disabled">
+                  <i class="bi bi-x-circle"></i>
+                  <span>1:1 코칭 세션</span>
+                </li>
+                <li class="disabled">
+                  <i class="bi bi-x-circle"></i>
+                  <span>클라이언트 매칭 서비스</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn-pricing">무료로 시작하기</a>
+            </div>
+            <div class="pricing-badge free">무료</div>
+          </div>
+        </div>
+
+        <!-- 프리미엄 요금제 -->
+        <div class="col-md-4">
+          <div class="pricing-card active">
+            <div class="pricing-header">
+              <h3 class="pricing-title">프리미엄</h3>
+              <div class="pricing-price">
+                <span class="currency">₩</span>
+                <span class="amount">49,000</span>
+                <span class="period">/월</span>
+              </div>
+              <p class="pricing-description">본격적인 자기 정체성 탐구를 원하는 분들을 위한 요금제입니다</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>기본 정체성 진단 테스트</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>무제한 웨비나 참석</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>다움 프리미엄 뉴스레터</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>전체 교육 콘텐츠 접근 권한</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>맞춤형 정체성 진단 보고서</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>월 1회 그룹 코칭 세션</span>
+                </li>
+                <li class="disabled">
+                  <i class="bi bi-x-circle"></i>
+                  <span>클라이언트 매칭 서비스</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn-pricing active">가입하기</a>
+            </div>
+            <div class="pricing-badge">인기</div>
+          </div>
+        </div>
+
+        <!-- 엔터프라이즈 요금제 -->
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-title">엔터프라이즈</h3>
+              <div class="pricing-price">
+                <span class="currency">₩</span>
+                <span class="amount">199,000</span>
+                <span class="period">/월</span>
+              </div>
+              <p class="pricing-description">전문적인 성장과 사업 연계를 원하는 분들을 위한 요금제입니다</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>프리미엄 요금제의 모든 혜택</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>월 1회 1:1 코칭 세션</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>우선 고객 지원</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>맞춤형 커리어 로드맵</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>전문 클라이언트 매칭 서비스</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>분기별 성과 리뷰 세션</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>다움 네트워크 VIP 액세스</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn-pricing">문의하기</a>
+            </div>
+            <div class="pricing-badge enterprise">고급</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <p class="pricing-note">모든 요금제는 언제든지 변경 또는 취소가 가능합니다. 특별한 요구사항이나 기업 맞춤형 요금제가 필요하신 경우 <a
+              href="#contact">문의</a>해 주세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 컨택트 섹션 -->
   <section class="section-padding contact" id="contact">
     <div class="container">
@@ -513,7 +688,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-4 mb-md-0">
-          <div class="footer-logo"><span style="color: var(--white);">다움</span><span style="color: var(--secondary);">연구소</span></div>
+          <div class="footer-logo"><span style="color: var(--white);">다움</span><span
+              style="color: var(--secondary);">연구소</span></div>
           <div class="mt-4">
             <div class="d-flex mb-3">
               <i class="bi bi-geo-alt" style="color: var(--secondary); font-size: 1.2rem; margin-right: 10px;"></i>
@@ -533,10 +709,14 @@
         <div class="col-md-4 mb-4 mb-md-0">
           <h5 class="text-white mb-4 fw-bold">바로가기</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="#about" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.7);">연구소 소개</a></li>
-            <li class="mb-2"><a href="#values" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.7);">핵심 가치</a></li>
-            <li class="mb-2"><a href="#vision" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.7);">비전</a></li>
-            <li class="mb-2"><a href="#business" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.7);">핵심 사업</a></li>
+            <li class="mb-2"><a href="#about" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.7);">연구소
+                소개</a></li>
+            <li class="mb-2"><a href="#values" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.7);">핵심
+                가치</a></li>
+            <li class="mb-2"><a href="#vision" class="text-decoration-none"
+                style="color: rgba(255, 255, 255, 0.7);">비전</a></li>
+            <li class="mb-2"><a href="#business" class="text-decoration-none"
+                style="color: rgba(255, 255, 255, 0.7);">핵심 사업</a></li>
             <li><a href="#contact" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.7);">문의하기</a></li>
           </ul>
         </div>
@@ -556,7 +736,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="footer-copyright text-center mt-4 pt-4">
         COPYRIGHT© 2023 (주)다움연구소. ALL RIGHT RESERVED.
       </div>
@@ -565,7 +745,7 @@
 
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <!-- 커스텀 JS -->
   <script src="js/scripts.js"></script>
 </body>
