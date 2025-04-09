@@ -1,1081 +1,1262 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="all">
   <meta name="format-detection" content="telephone=no">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <link rel="shortcut icon" href="#" type="image/x-icon">
-  <link rel="icon" href="#" type="image/x-icon">
+
   <!-- 오픈그래프 및 디스크립션 시작 -->
   <meta name="description" content="다움연구소는 개인과 조직이 '나다움', '우리다움', '회사다움'이라는 고유한 정체성을 발견하고 정립할 수 있도록 돕습니다.">
-  <meta property="og:type" content="website"> 
+  <meta property="og:type" content="website">
   <meta property="og:title" content="다움연구소 - 개인과 조직의 다움을 발견하고 세우는 곳">
   <meta property="og:description" content="다움연구소는 개인과 조직이 '나다움', '우리다움', '회사다움'이라는 고유한 정체성을 발견하고 정립할 수 있도록 돕습니다.">
   <meta property="og:image" content="#">
   <meta property="og:url" content="#">
   <meta property="og:site_name" content="다움연구소">
   <!-- 오픈그래프 및 디스크립션 끝 -->
+
   <title>다움연구소 - 개인과 조직의 다움을 발견하고 세우는 곳</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 부트스트랩 아이콘 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Google Fonts - Pretendard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* 성공 케이스 스타일 */
-    .success_cases {
-      padding: 100px 0;
-      background: #f5f9ff;
+    :root {
+      --primary: #4A90E2;
+      --primary-light: #83C0FF;
+      --secondary: #FFF176;
+      --dark: #333;
+      --gray: #666;
+      --light-gray: #f5f9ff;
+      --white: #fff;
     }
-    
-    .success_cases .cases_con {
-      margin-top: 50px;
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
     }
-    
-    .success_cases ul {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 -15px;
+
+    /* 공통 요소 */
+    .section-padding {
+      padding: 6rem 0;
     }
-    
-    .success_cases ul li {
-      width: 50%;
-      padding: 15px;
-      margin-bottom: 30px;
+
+    .section-title-wrapper {
+      margin-bottom: 3rem;
+      text-align: center;
     }
-    
-    .success_cases ul li a {
+
+    .section-subtitle {
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
       display: block;
-      background: #fff;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* 헤더 */
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      color: var(--dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .navbar .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 20px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+    }
+
+    .navbar .btn-primary:hover {
+      background-color: #357BC2;
+      border-color: #357BC2;
+    }
+
+    /* 메인 비주얼 */
+    .main-visual {
+      padding-top: 5rem;
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main-visual-content {
+      position: relative;
+      z-index: 10;
+      color: var(--white);
+    }
+
+    .main-visual-subtitle {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .main-visual-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .main-visual-title span {
+      color: var(--secondary);
+    }
+
+    .main-visual-description {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .main-visual-video {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    /* 제안 섹션 */
+    .proposal {
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .proposal-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      line-height: 1.3;
+    }
+
+    .proposal-title em {
+      color: var(--primary);
+      font-style: normal;
+    }
+
+    .proposal-description {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .proposal-description em {
+      color: var(--primary);
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .proposal-sub {
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+
+    .proposal-sub em {
+      color: var(--primary);
+      font-style: normal;
+    }
+
+    /* 성공 사례 */
+    .success-cases {
+      background-color: var(--light-gray);
+    }
+
+    .case-card {
+      height: 100%;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       transition: all 0.3s;
-      height: 100%;
+      background-color: var(--white);
     }
-    
-    .success_cases ul li a:hover {
+
+    .case-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
-    
-    .success_cases ul li .pic {
-      width: 100%;
+
+    .case-img-container {
       height: 250px;
       overflow: hidden;
     }
-    
-    .success_cases ul li .pic img {
+
+    .case-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: all 0.5s;
     }
-    
-    .success_cases ul li a:hover .pic img {
+
+    .case-card:hover .case-img {
       transform: scale(1.05);
     }
-    
-    .success_cases ul li .txt {
-      padding: 30px;
+
+    .case-content {
+      padding: 1.5rem;
     }
-    
-    .success_cases ul li .tag {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-    }
-    
-    .success_cases ul li .tag span {
+
+    .case-tag {
       display: inline-block;
-      padding: 5px 10px;
-      background: #4A90E2;
-      color: #fff;
-      font-size: 12px;
+      padding: 0.3rem 0.8rem;
+      background-color: var(--primary);
+      color: var(--white);
+      font-size: 0.75rem;
       border-radius: 20px;
-      margin-right: 10px;
-      margin-bottom: 5px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
     }
-    
-    .success_cases ul li .tag span:nth-child(2) {
-      background: #83C0FF;
+
+    .case-tag.secondary {
+      background-color: var(--primary-light);
     }
-    
-    .success_cases ul li strong {
-      display: block;
-      font-size: 20px;
+
+    .case-title {
+      font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
       line-height: 1.4;
     }
-    
-    .success_cases ul li p {
-      font-size: 16px;
-      color: #666;
-      line-height: 1.6;
+
+    .case-description {
+      font-size: 1rem;
+      color: var(--gray);
     }
-    
-    .success_cases .btn_box {
-      text-align: center;
-      margin-top: 30px;
+
+    /* 핵심 가치 */
+    .core-values {
+      background-color: var(--white);
     }
-    
-    @media (max-width: 768px) {
-      .success_cases ul li {
-        width: 100%;
-      }
-    }
-    
-    /* 공통 스타일 */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-    }
-    
-    body {
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    
-    ul, li {
-      list-style: none;
-    }
-    
-    .wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    .n_wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    .new_comontit {
-      text-align: left;
-      margin-bottom: 50px;
-    }
-    
-    .new_comontit em {
-      display: block;
-      font-size: 18px;
-      font-weight: 500;
-      color: #4A90E2;
-      margin-bottom: 10px;
-    }
-    
-    .new_comontit h3 {
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-    
-    .new_comontit p {
-      font-size: 18px;
-      font-weight: 400;
-      color: #666;
-    }
-    
-    .new_comontit.align_center {
-      text-align: center;
-    }
-    
-    .new_comontit.clr_white {
-      color: #fff;
-    }
-    
-    .new_comontit.clr_white p {
-      color: rgba(255, 255, 255, 0.8);
-    }
-    
-    .comon_btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #4A90E2;
-      color: #fff;
-      border-radius: 30px;
-      font-weight: 500;
-      transition: all 0.3s;
-    }
-    
-    .comon_btn:hover {
-      background: #357BC2;
-    }
-    
-    .comon_btn.white {
-      background: #fff;
-      color: #4A90E2;
-    }
-    
-    .comon_btn.white:hover {
-      background: #f5f5f5;
-    }
-    
-    .comon_btn02 {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #fff;
-      color: #4A90E2;
-      border-radius: 30px;
-      font-weight: 500;
-      transition: all 0.3s;
-    }
-    
-    .comon_btn02:hover {
-      background: #f5f5f5;
-    }
-    
-    /* 헤더 */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 100;
-    }
-    
-    header .wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
-    }
-    
-    header h1 {
-      font-size: 24px;
-      font-weight: 700;
-    }
-    
-    header h1 a {
-      color: #4A90E2;
-    }
-    
-    header nav {
-      display: flex;
-      align-items: center;
-    }
-    
-    header nav h2 {
-      display: none;
-    }
-    
-    header nav ul {
-      display: flex;
-    }
-    
-    header nav ul li {
-      margin-left: 30px;
-      position: relative;
-    }
-    
-    header nav ul li a {
-      font-size: 16px;
-      font-weight: 500;
-    }
-    
-    header nav ul li:hover > a {
-      color: #4A90E2;
-    }
-    
-    header nav .etc {
-      margin-left: 30px;
-    }
-    
-    header nav .etc a {
-      display: inline-block;
-      padding: 8px 20px;
-      border-radius: 20px;
-      background: #4A90E2;
-      color: #fff;
-      font-size: 14px;
-    }
-    
-    /* 메인 비주얼 */
-    .main_visual {
-      padding-top: 80px;
-      height: 100vh;
-      background: linear-gradient(to right, #4A90E2, #83C0FF);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .main_visual .full {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-    
-    .main_visual .txt {
-      position: absolute;
-      left: 10%;
-      z-index: 10;
-      color: #fff;
-      max-width: 600px;
-    }
-    
-    .main_visual .txt em {
-      display: block;
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-    
-    .main_visual .txt h3 {
-      font-size: 50px;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-    
-    .main_visual .txt h3 span {
-      color: #FFF176;
-    }
-    
-    .main_visual .txt p {
-      font-size: 20px;
-      line-height: 1.6;
-    }
-    
-    .main_visual video {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
-    }
-    
-    /* 제안 섹션 */
-    .main_proposal {
-      padding: 100px 0;
-      background: #f9f9f9;
-    }
-    
-    .main_proposal .txt {
-      text-align: center;
-    }
-    
-    .main_proposal strong {
-      display: block;
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 30px;
-      line-height: 1.3;
-    }
-    
-    .main_proposal strong em {
-      color: #4A90E2;
-    }
-    
-    .main_proposal p {
-      font-size: 24px;
-      margin-bottom: 30px;
-    }
-    
-    .main_proposal p em {
-      color: #4A90E2;
-      font-weight: 700;
-    }
-    
-    .main_proposal span {
-      display: block;
-      font-size: 20px;
-      color: #666;
-    }
-    
-    .main_proposal span em {
-      color: #4A90E2;
-    }
-    
-    /* 핵심 가치 섹션 */
-    .core_values {
-      padding: 100px 0;
-      background: #fff;
-    }
-    
-    .core_values ul {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 -15px;
-    }
-    
-    .core_values ul li {
-      width: 20%;
-      padding: 15px;
-    }
-    
-    .core_values ul li .box {
-      background: #f5f5f5;
+
+    .value-card {
+      background-color: #f5f5f5;
       border-radius: 10px;
-      padding: 30px;
+      padding: 2rem;
       height: 100%;
       transition: all 0.3s;
     }
-    
-    .core_values ul li .box:hover {
+
+    .value-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
-    
-    .core_values ul li .icon {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-    
-    .core_values ul li strong {
-      display: block;
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    
-    .core_values ul li p {
-      font-size: 16px;
-      color: #666;
-    }
-    
-    /* 핵심 사업 섹션 */
-    .business_model {
-      padding: 100px 0;
-      background: #4A90E2;
-      color: #fff;
-    }
-    
-    .business_model ul {
+
+    .value-header {
       display: flex;
-      flex-wrap: wrap;
-      margin: 0 -15px;
+      align-items: center;
+      margin-bottom: 1rem;
     }
-    
-    .business_model ul li {
-      width: 25%;
-      padding: 15px;
+
+    .value-icon {
+      font-size: 2.5rem;
+      margin-right: 1rem;
     }
-    
-    .business_model ul li .box {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 30px;
-      height: 100%;
-      transition: all 0.3s;
-    }
-    
-    .business_model ul li .box:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-    
-    .business_model ul li .icon {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-    
-    .business_model ul li strong {
-      display: block;
-      font-size: 20px;
+
+    .value-title {
+      font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 10px;
     }
-    
-    .business_model ul li p {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.8);
+
+    .value-description {
+      font-size: 1rem;
+      color: var(--gray);
     }
-    
+
     /* 철학 섹션 */
     .philosophy {
-      padding: 100px 0;
-      background: #f9f9f9;
+      background-color: #f9f9f9;
     }
-    
-    .philosophy .content {
-      background: #fff;
-      padding: 50px;
+
+    .philosophy-content {
+      background-color: var(--white);
+      padding: 3rem;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
-    
-    .philosophy h4 {
-      font-size: 28px;
+
+    .philosophy-title {
+      font-size: 1.75rem;
       font-weight: 700;
-      margin-bottom: 30px;
+      color: var(--primary);
+      margin-bottom: 2rem;
       text-align: center;
-      color: #4A90E2;
     }
-    
-    .philosophy p {
-      font-size: 18px;
+
+    .philosophy-text {
+      font-size: 1.1rem;
       line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 1.5rem;
     }
-    
+
+    .quote-box {
+      background-color: var(--light-gray);
+      border-left: 5px solid var(--primary);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote-author {
+      font-size: 1rem;
+      text-align: right;
+      color: var(--gray);
+    }
+
     /* 비전 섹션 */
     .vision {
-      padding: 100px 0;
-      background: url('https://via.placeholder.com/1920x600/4A90E2/FFFFFF') no-repeat center;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x600/4A90E2/FFFFFF');
       background-size: cover;
-      position: relative;
+      background-position: center;
+      color: var(--white);
     }
-    
-    .vision::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-    }
-    
-    .vision .n_wrapper {
-      position: relative;
-      z-index: 10;
-    }
-    
-    .vision ul {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 -15px;
-    }
-    
-    .vision ul li {
-      width: 33.333%;
-      padding: 15px;
-    }
-    
-    .vision ul li .box {
-      background: rgba(255, 255, 255, 0.1);
+
+    .vision-card {
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding: 30px;
+      padding: 2rem;
       height: 100%;
       transition: all 0.3s;
     }
-    
-    .vision ul li .box:hover {
-      background: rgba(255, 255, 255, 0.2);
+
+    .vision-card:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
-    
-    .vision ul li .year {
-      font-size: 50px;
+
+    .vision-year {
+      font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 20px;
-      color: #FFF176;
+      color: var(--secondary);
+      margin-bottom: 1rem;
     }
-    
-    .vision ul li p {
-      font-size: 18px;
-      color: #fff;
+
+    .vision-description {
+      font-size: 1.1rem;
       line-height: 1.8;
     }
-    
+
+    /* 핵심 사업 */
+    .business-model {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .business-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 2rem;
+      height: 100%;
+      transition: all 0.3s;
+    }
+
+    .business-card:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .business-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .business-icon {
+      font-size: 2.5rem;
+      margin-right: 1rem;
+    }
+
+    .business-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .business-description {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
     /* 컨택트 섹션 */
     .contact {
-      padding: 100px 0;
-      background: #fff;
+      background-color: var(--white);
     }
-    
-    .contact .form {
+
+    .contact-form {
       max-width: 600px;
       margin: 0 auto;
     }
-    
-    .contact .form .field {
-      margin-bottom: 20px;
-    }
-    
-    .contact .form label {
-      display: block;
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-    
-    .contact .form input,
-    .contact .form textarea {
-      width: 100%;
-      padding: 15px;
+
+    .form-control,
+    .form-select {
+      padding: 0.75rem;
       border: 1px solid #ddd;
       border-radius: 5px;
-      font-size: 16px;
+      font-size: 1rem;
     }
-    
-    .contact .form textarea {
-      height: 150px;
-      resize: none;
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(74, 144, 226, 0.25);
     }
-    
-    .contact .form button {
+
+    .btn-submit {
+      display: block;
       width: 100%;
-      padding: 15px;
-      background: #4A90E2;
-      color: #fff;
+      padding: 0.75rem;
+      background-color: var(--primary);
+      color: var(--white);
       border: none;
       border-radius: 5px;
-      font-size: 18px;
+      font-size: 1.1rem;
       font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #357BC2;
+    }
+
+    /* 푸터 */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-info p {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 1.5rem;
+    }
+
+    .footer-links {
+      margin-top: 1.5rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      margin-right: 1.5rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* 유틸리티 */
+    .btn-daum {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary);
+      color: var(--white);
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-daum:hover {
+      background-color: #357BC2;
+      color: var(--white);
+    }
+
+    .btn-daum.white {
+      background-color: var(--white);
+      color: var(--primary);
+    }
+
+    .btn-daum.white:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* 슬라이드쇼 스타일 */
+    .activity-slideshow {
+      padding: 80px 0;
+      background-color: #f9f9f9;
+    }
+
+    .section-title-wrapper {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-subtitle {
+      color: #4A90E2;
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .slides-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .prev-btn,
+    .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      z-index: 2;
+      transition: all 0.3s;
+    }
+
+    .prev-btn:hover,
+    .next-btn:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .prev-btn {
+      left: 15px;
+    }
+
+    .next-btn {
+      right: 15px;
+    }
+
+    .dots-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
       cursor: pointer;
       transition: all 0.3s;
     }
-    
-    .contact .form button:hover {
-      background: #357BC2;
+
+    .dot.active {
+      background-color: #4A90E2;
     }
-    
-    /* 푸터 */
-    footer {
-      padding: 50px 0;
-      background: #333;
-      color: #fff;
-    }
-    
-    footer .wrapper {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    
-    footer .logo {
-      width: 200px;
-      font-size: 24px;
-      font-weight: 700;
-      color: #4A90E2;
-    }
-    
-    footer .ad_con {
-      flex: 1;
-      padding-left: 50px;
-    }
-    
-    footer address p {
-      font-size: 14px;
-      margin-bottom: 5px;
-      font-style: normal;
-    }
-    
-    footer .copy {
-      display: block;
-      margin-top: 20px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.5);
-    }
-    
-    footer .f_btn {
-      width: 100%;
-      margin-top: 30px;
-      display: flex;
-    }
-    
-    footer .f_btn a {
-      margin-right: 20px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.7);
-    }
-    
-    footer .f_btn a:hover {
-      color: #fff;
-    }
-    
-    /* 반응형 */
-    @media (max-width: 1024px) {
-      .new_comontit h3 {
-        font-size: 32px;
-      }
-      
-      .main_visual .txt h3 {
-        font-size: 40px;
-      }
-      
-      .main_proposal strong {
-        font-size: 32px;
-      }
-      
-      .core_values ul li {
-        width: 33.333%;
-      }
-      
-      .business_model ul li {
-        width: 50%;
-      }
-      
-      .vision ul li {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-    }
-    
+
     @media (max-width: 768px) {
-      header nav ul {
-        display: none;
+      .activity-slideshow {
+        padding: 50px 0;
       }
-      
-      .main_visual {
-        height: auto;
-        padding: 150px 0 100px;
+
+      .section-title {
+        font-size: 2rem;
       }
-      
-      .main_visual .full {
-        flex-direction: column;
+
+      .slide {
+        height: 350px;
       }
-      
-      .main_visual .txt {
-        position: relative;
-        left: 0;
+    }
+
+    @media (max-width: 576px) {
+      .slide {
+        height: 250px;
+      }
+
+      .prev-btn,
+      .next-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .main-visual-title {
+        font-size: 2.5rem;
+      }
+
+      .proposal-title {
+        font-size: 2rem;
+      }
+
+      .vision-year {
+        font-size: 2.5rem;
+      }
+
+      .philosophy-content {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .section-padding {
+        padding: 4rem 0;
+      }
+
+      .main-visual {
+        min-height: auto;
+        padding: 8rem 0 4rem;
+      }
+
+      .main-visual-content {
         text-align: center;
-        max-width: 100%;
       }
-      
-      .main_visual video {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+
+      .main-visual-description {
+        margin-left: auto;
+        margin-right: auto;
       }
-      
-      .core_values ul li {
-        width: 50%;
+
+      .section-title {
+        font-size: 1.75rem;
       }
-      
-      .business_model ul li {
-        width: 100%;
+
+      .main-visual-title {
+        font-size: 2rem;
       }
-      
-      footer .wrapper {
-        flex-direction: column;
+
+      .main-visual-subtitle {
+        font-size: 1.2rem;
       }
-      
-      footer .logo {
-        width: 100%;
-        margin-bottom: 20px;
+
+      .main-visual-description {
+        font-size: 1.1rem;
       }
-      
-      footer .ad_con {
-        padding-left: 0;
+
+      .proposal-title {
+        font-size: 1.75rem;
       }
-    }
-    
-    @media (max-width: 480px) {
-      .new_comontit h3 {
-        font-size: 28px;
+
+      .proposal-description {
+        font-size: 1.1rem;
       }
-      
-      .main_visual .txt h3 {
-        font-size: 32px;
+
+      .philosophy-title {
+        font-size: 1.5rem;
       }
-      
-      .main_proposal strong {
-        font-size: 28px;
+
+      .philosophy-text {
+        font-size: 1rem;
       }
-      
-      .core_values ul li {
-        width: 100%;
-      }
-      
-      .philosophy .content {
-        padding: 30px;
+
+      .quote {
+        font-size: 1.1rem;
       }
     }
-    
-    /* 모바일 브레이크포인트 */
-    .mo_br {
-      display: none;
+
+    /* 단체 사진 섹션 스타일 */
+    .team-photo-section {
+      padding: 2rem 0 4rem;
+      background-color: var(--white);
+      border-top: 1px solid #eee;
     }
-    
+
+    .team-photo-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .team-photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .team-photo:hover img {
+      transform: scale(1.02);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: white;
+    }
+
+    .photo-caption p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
     @media (max-width: 768px) {
-      .mo_br {
-        display: block;
+      .team-photo-section {
+        padding: 1.5rem 0 3rem;
       }
-      
-      .pc_br {
-        display: none;
+
+      .photo-caption p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
   <!-- 헤더 -->
   <header>
-    <div class="wrapper">
-      <h1><a href="#">다움연구소</a></h1>
-      <nav>
-        <h2>메뉴</h2>
-        <ul>
-          <li><a href="#about">연구소 소개</a></li>
-          <li><a href="#vision">비전</a></li>
-          <li><a href="#values">핵심 가치</a></li>
-          <li><a href="#business">핵심 사업</a></li>
-          <li><a href="#contact">문의하기</a></li>
-        </ul>
-        <div class="etc">
-          <a href="#">컨설팅 신청</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <hr>
-  
-  <!-- 메인 컨테이너 -->
-  <div id="container">
-    <!-- 메인 비주얼 -->
-    <div class="main_visual" id="about">
-      <div class="full">
-        <div class="txt">
-          <em>개인과 조직의 다움을 발견하고 세우는 곳</em>
-          <h3>당신의 <span>진정한 다움</span>이 <br>경쟁력입니다</h3>
-          <p>다움연구소는 개인과 조직이 '나다움', '우리다움', '회사다움'이라는 <br class="pc_br">고유한 정체성을 발견하고 정립할 수 있도록 돕습니다.</p>
-        </div>
-        <video autoplay loop muted playsinline id="vid">
-          <source src="https://player.vimeo.com/external/452971338.sd.mp4?s=e89731df9259e13f7f5f70e473d51f0d68965c3f&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
-        </video>
-      </div>
-    </div>
-    
-    <!-- 제안 섹션 -->
-    <div class="main_proposal">
-      <div class="txt">
-        <strong>당신의 <em>다움</em>을 <br class="mo_br">발견하셨나요?</strong>
-        <p>삶의 방향을 잃은 사람들, 정체성 혼란을 겪는 청년들, <br>조직의 본질을 잊은 기업들이 <em>본연의 존재 이유를 회복</em>하도록 돕습니다.</p>
-        <span>당신의 <em>진정한 경쟁력은 자신만의 다움</em>입니다.</span>
-      </div>
-    </div>
-    
-    <!-- 성공 케이스 섹션 -->
-    <div class="success_cases">
-      <div class="n_wrapper">
-        <div class="new_comontit">
-          <em>SUCCESS STORIES</em>
-          <h3><strong>다움을 찾고 성장한 <br>사람들의 이야기</strong></h3>
-          <p>다움연구소의 프로그램을 통해 자신만의 정체성을 발견하고<br>성장한 20-30대들의 실제 사례입니다.</p>
-        </div>
-        <div class="cases_con">
-          <ul>
-            <li>
-              <a href="#">
-                <p class="pic"><img src="https://via.placeholder.com/400x300/4A90E2/FFFFFF" alt="김지원의 사례"></p>
-                <div class="txt">
-                  <div class="tag">
-                    <span>개인 다움 컨설팅</span>
-                    <span>27세 마케터</span>
-                  </div>
-                  <strong>남들과 같은 길을 가는 것이 불안했습니다</strong>
-                  <p>"적성에 맞지 않는 일을 하며 불안감에 시달렸는데, 다움연구소를 통해 제 강점을 발견하고 새로운 커리어를 시작했습니다. 이제는 매일 아침이 기다려집니다."</p>
-                </div>
-              </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">다움연구소</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">연구소 소개</a>
             </li>
-            <li>
-              <a href="#">
-                <p class="pic"><img src="https://via.placeholder.com/400x300/83C0FF/FFFFFF" alt="박현우의 사례"></p>
-                <div class="txt">
-                  <div class="tag">
-                    <span>지식 구독 플랫폼</span>
-                    <span>32세 프리랜서</span>
-                  </div>
-                  <strong>3년간 방황 끝에 찾은 나만의 브랜드</strong>
-                  <p>"여러 직업을 전전하며 정체성에 혼란을 겪고 있었습니다. 다움연구소의 뉴스레터를 6개월간 구독하며 제 강점을 체계적으로 발견했고, 지금은 제 이름을 건 사업을 시작했습니다."</p>
-                </div>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="#values">핵심 가치</a>
             </li>
-            <li>
-              <a href="#">
-                <p class="pic"><img src="https://via.placeholder.com/400x300/2C3E50/FFFFFF" alt="이수진의 사례"></p>
-                <div class="txt">
-                  <div class="tag">
-                    <span>정체성 진단 키트</span>
-                    <span>25세 대학원생</span>
-                  </div>
-                  <strong>학업과 꿈 사이에서 길을 찾았습니다</strong>
-                  <p>"대학원 공부와 제가 정말 하고 싶은 일 사이에서 갈등했어요. 정체성 진단 키트를 통해 저의 핵심 가치를 발견하고 두 가지를 조화롭게 병행할 수 있는 방법을 찾았습니다."</p>
-                </div>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="#vision">비전</a>
             </li>
-            <li>
-              <a href="#">
-                <p class="pic"><img src="https://via.placeholder.com/400x300/FFF176/333333" alt="정민호의 사례"></p>
-                <div class="txt">
-                  <div class="tag">
-                    <span>커리어 코칭</span>
-                    <span>29세 직장인</span>
-                  </div>
-                  <strong>매일 반복되는 일상에서 의미를 찾았습니다</strong>
-                  <p>"똑같은 업무의 반복으로 번아웃을 겪고 있었습니다. 다움연구소의 코칭을 통해 제 일의 의미를 재발견하고, 업무 방식을 제 방식으로 재구성했더니 성과도 오르고 만족도도 높아졌습니다."</p>
-                </div>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="#business">핵심 사업</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">문의하기</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <a class="btn btn-primary" href="#">컨설팅 신청</a>
             </li>
           </ul>
         </div>
-        <div class="btn_box">
-          <a href="#" class="comon_btn">더 많은 성공 사례 보기</a>
-        </div>
       </div>
-    </div>
-    
-    <!-- 핵심 가치 섹션 -->
-    <div class="core_values" id="values">
-      <div class="n_wrapper">
-        <div class="new_comontit align_center">
-          <em>CORE VALUES</em>
-          <h3>다움연구소의 핵심 가치</h3>
-          <p>우리는 다음과 같은 가치를 중심으로 활동합니다</p>
-        </div>
-        <ul>
-          <li>
-            <div class="box">
-              <div class="icon">🎨</div>
-              <strong>정체성</strong>
-              <p>존재의 본질과 고유한 색깔을 찾습니다</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="icon">🤝</div>
-              <strong>상생</strong>
-              <p>나다움과 타인의 다움이 조화를 이룰 때 진짜 경쟁력이 생깁니다</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="icon">💡</div>
-              <strong>가능성의 발견</strong>
-              <p>숨어 있는 빛, 잠재력, 고유한 경쟁력을 발굴합니다</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="icon">📚</div>
-              <strong>탐구와 실행</strong>
-              <p>연구하는 만큼 행동하고, 말하는 만큼 실천합니다</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="icon">🌿</div>
-              <strong>사람 중심</strong>
-              <p>문제보다 사람에 주목하며, 변화보다 본질을 탐구합니다</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- 철학 섹션 -->
-    <div class="philosophy">
-      <div class="n_wrapper">
-        <div class="new_comontit align_center">
-          <em>OUR PHILOSOPHY</em>
-          <h3>다움에 대한 철학적 정의</h3>
-          <p>우리가 생각하는 다움의 의미입니다</p>
-        </div>
-        <div class="content">
-          <h4>다움은 경쟁력이다</h4>
-          <p>경쟁력의 의미는 시대가 바뀌었습니다. 예전의 경쟁력은 타인을 밟고 올라서는 제로섬 게임이었다면, 오늘날의 경쟁력은 자신의 색깔을 분명히 하며 타인과 조화를 이루는 상생의 힘입니다.</p>
-          <p>즉, '다움'은 곧 진정한 경쟁력이자 공존의 방식입니다. 다움연구소는 이러한 철학을 바탕으로 개인과 조직의 고유한 정체성을 찾아 세우는 일을 돕습니다.</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- 비전 섹션 -->
-    <div class="vision" id="vision">
-      <div class="n_wrapper">
-        <div class="new_comontit align_center clr_white">
-          <em>OUR VISION</em>
-          <h3>다움연구소의 비전</h3>
-          <p>"정체성을 찾고 싶은 사람들이 가장 먼저 떠올리는 연구소"</p>
-        </div>
-        <ul>
-          <li>
-            <div class="box">
-              <div class="year">5년 후</div>
-              <p>다움연구소는 자기다움으로 살아가고자 하는 사람들의 대표 브랜드로 자리 잡습니다.</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="year">10년 후</div>
-              <p>학교나 직장 등 기존 제도 안에서 채워지지 않았던 정체성 혼란의 해답을 제시하는 전문 연구기관이 됩니다.</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="year">미래</div>
-              <p>사람들에게 진정한 경쟁력은 자신의 다움이라는 것을 교육, 콘텐츠, 컨설팅을 통해 널리 알리는 조직이 됩니다.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- 핵심 사업 섹션 -->
-    <div class="business_model" id="business">
-      <div class="n_wrapper">
-        <div class="new_comontit align_center clr_white">
-          <em>OUR BUSINESS</em>
-          <h3>핵심 사업 및 수익 모델</h3>
-          <p>다움연구소가 제공하는 서비스입니다</p>
-        </div>
-        <ul>
-          <li>
-            <div class="box">
-              <div class="icon">🎯</div>
-              <strong>개인 다움 컨설팅</strong>
-              <p>퍼스널 브랜딩, 경쟁력 강화<br>진로/커리어 코칭<br>유료 강의/코칭</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="icon">📨</div>
-              <strong>지식 구독 플랫폼</strong>
-              <p>개인 맞춤형 솔루션 뉴스레터로 제공<br>월 구독제</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="icon">🏢</div>
-              <strong>조직 다움 워크숍</strong>
-              <p>조직 정체성 진단<br>문화 혁신 컨설팅<br>프로젝트 계약</p>
-            </div>
-          </li>
-          <li>
-            <div class="box">
-              <div class="icon">🎓</div>
-              <strong>콘텐츠 개발 및 배포</strong>
-              <p>정체성 진단 키트<br>워크북, 클래스 제작<br>디지털 상품 판매</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- 컨택트 섹션 -->
-    <div class="contact" id="contact">
-      <div class="n_wrapper">
-        <div class="new_comontit align_center">
-          <em>CONTACT US</em>
-          <h3>다움 컨설팅 문의하기</h3>
-          <p>나와 우리 조직의 다움을 찾는 여정, 함께 시작해보세요</p>
-        </div>
-        <div class="form">
-          <div class="field">
-            <label for="name">이름</label>
-            <input type="text" id="name" placeholder="이름을 입력해주세요">
+    </nav>
+  </header>
+
+  <!-- 메인 비주얼 -->
+  <section class="main-visual" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="main-visual-content">
+            <span class="main-visual-subtitle">개인과 조직의 다움을 발견하고 세우는 곳</span>
+            <h1 class="main-visual-title">당신의 <span>진정한 다움</span>이<br class="d-none d-lg-block"> 경쟁력입니다</h1>
+            <p class="main-visual-description">다움연구소는 개인과 조직이 '나다움', '우리다움', '회사다움'이라는 고유한 정체성을 발견하고 정립할 수 있도록 돕습니다.</p>
+            <a href="#contact" class="btn-daum">컨설팅 문의하기</a>
           </div>
-          <div class="field">
-            <label for="email">이메일</label>
-            <input type="email" id="email" placeholder="이메일을 입력해주세요">
+        </div>
+      </div>
+    </div>
+    <video class="main-visual-video" autoplay loop muted playsinline>
+      <source src="sample/sample_video.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- 제안 섹션 -->
+  <section class="section-padding proposal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="proposal-title">당신의 <em>다움</em>을 <br class="d-block d-md-none">발견하셨나요?</h2>
+          <p class="proposal-description">삶의 방향을 잃은 사람들, 정체성 혼란을 겪는 청년들, <br class="d-none d-md-block">조직의 본질을 잊은 기업들이
+            <em>본연의 존재 이유를 회복</em>하도록 돕습니다.
+          </p>
+          <p class="proposal-sub">당신의 <em>진정한 경쟁력은 자신만의 다움</em>입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 성공 케이스 섹션 -->
+  <section class="section-padding success-cases">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">SUCCESS STORIES</span>
+        <h2 class="section-title">다움을 찾고 성장한 <br class="d-block d-md-none">사람들의 이야기</h2>
+        <p class="section-description">다움연구소의 프로그램을 통해 자신만의 정체성을 발견하고<br class="d-none d-md-block">성장한 20-30대들의 실제
+          사례입니다.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <a href="#" class="text-decoration-none">
+            <div class="case-card">
+              <div class="case-img-container">
+                <img src="https://via.placeholder.com/400x300/4A90E2/FFFFFF" alt="김지원의 사례" class="case-img">
+              </div>
+              <div class="case-content">
+                <div class="mb-3">
+                  <span class="case-tag">개인 다움 컨설팅</span>
+                  <span class="case-tag secondary">27세 마케터</span>
+                </div>
+                <h3 class="case-title">남들과 같은 길을 가는 것이 불안했습니다</h3>
+                <p class="case-description">"적성에 맞지 않는 일을 하며 불안감에 시달렸는데, 다움연구소를 통해 제 강점을 발견하고 새로운 커리어를 시작했습니다. 이제는 매일
+                  아침이 기다려집니다."</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" class="text-decoration-none">
+            <div class="case-card">
+              <div class="case-img-container">
+                <img src="https://via.placeholder.com/400x300/83C0FF/FFFFFF" alt="박현우의 사례" class="case-img">
+              </div>
+              <div class="case-content">
+                <div class="mb-3">
+                  <span class="case-tag">지식 구독 플랫폼</span>
+                  <span class="case-tag secondary">32세 프리랜서</span>
+                </div>
+                <h3 class="case-title">3년간 방황 끝에 찾은 나만의 브랜드</h3>
+                <p class="case-description">"여러 직업을 전전하며 정체성에 혼란을 겪고 있었습니다. 다움연구소의 뉴스레터를 6개월간 구독하며 제 강점을 체계적으로 발견했고, 지금은
+                  제 이름을 건 사업을 시작했습니다."</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" class="text-decoration-none">
+            <div class="case-card">
+              <div class="case-img-container">
+                <img src="https://via.placeholder.com/400x300/2C3E50/FFFFFF" alt="이수진의 사례" class="case-img">
+              </div>
+              <div class="case-content">
+                <div class="mb-3">
+                  <span class="case-tag">정체성 진단 키트</span>
+                  <span class="case-tag secondary">25세 대학원생</span>
+                </div>
+                <h3 class="case-title">학업과 꿈 사이에서 길을 찾았습니다</h3>
+                <p class="case-description">"대학원 공부와 제가 정말 하고 싶은 일 사이에서 갈등했어요. 정체성 진단 키트를 통해 저의 핵심 가치를 발견하고 두 가지를 조화롭게
+                  병행할 수 있는 방법을 찾았습니다."</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6">
+          <a href="#" class="text-decoration-none">
+            <div class="case-card">
+              <div class="case-img-container">
+                <img src="https://via.placeholder.com/400x300/FFF176/333333" alt="정민호의 사례" class="case-img">
+              </div>
+              <div class="case-content">
+                <div class="mb-3">
+                  <span class="case-tag">커리어 코칭</span>
+                  <span class="case-tag secondary">29세 직장인</span>
+                </div>
+                <h3 class="case-title">매일 반복되는 일상에서 의미를 찾았습니다</h3>
+                <p class="case-description">"똑같은 업무의 반복으로 번아웃을 겪고 있었습니다. 다움연구소의 코칭을 통해 제 일의 의미를 재발견하고, 업무 방식을 제 방식으로
+                  재구성했더니 성과도 오르고 만족도도 높아졌습니다."</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="#" class="btn-daum">더 많은 성공 사례 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 활동 이미지 슬라이드쇼 -->
+  <div class="activity-slideshow">
+    <div class="wrapper">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">OUR ACTIVITIES</span>
+        <h2 class="section-title">다움연구소의 활동</h2>
+      </div>
+
+      <div class="slideshow-container">
+        <div class="slides-wrapper">
+          <div class="slide">
+            <img src="sample/001.png" alt="워크숍 현장">
           </div>
-          <div class="field">
-            <label for="phone">연락처</label>
-            <input type="tel" id="phone" placeholder="연락처를 입력해주세요">
+          <div class="slide">
+            <img src="sample/002.png" alt="1:1 코칭">
           </div>
-          <div class="field">
-            <label for="type">문의 유형</label>
-            <select id="type">
-              <option value="">문의 유형을 선택해주세요</option>
+          <div class="slide">
+            <img src="sample/003.png" alt="팀 워크숍">
+          </div>
+          <div class="slide">
+            <img src="sample/004.png" alt="특강">
+          </div>
+          <div class="slide">
+            <img src="sample/005.png" alt="정기 모임">
+          </div>
+          <div class="slide">
+            <img src="sample/002.png" alt="컨퍼런스">
+          </div>
+        </div>
+
+        <button class="prev-btn" aria-label="이전 슬라이드">&lt;</button>
+        <button class="next-btn" aria-label="다음 슬라이드">&gt;</button>
+
+        <div class="dots-container">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+          <span class="dot" data-index="4"></span>
+          <span class="dot" data-index="5"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 핵심 가치 섹션 -->
+  <section class="section-padding core-values" id="values">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">CORE VALUES</span>
+        <h2 class="section-title">다움연구소의 핵심 가치</h2>
+        <p class="section-description">우리는 다음과 같은 가치를 중심으로 활동합니다</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="value-header">
+              <div class="value-icon">🎨</div>
+              <h3 class="value-title">정체성</h3>
+            </div>
+            <p class="value-description">존재의 본질과 고유한 색깔을 찾습니다. 모든 개인과 조직은 독특한 개성과 강점을 가지고 있습니다. 우리는 이러한 고유한 정체성을 발견하고,
+              그것이 온전히 발현될 수 있도록 돕는 과정에서 진정한 의미와 목적을 찾을 수 있다고 믿습니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="value-header">
+              <div class="value-icon">🤝</div>
+              <h3 class="value-title">상생</h3>
+            </div>
+            <p class="value-description">나다움과 타인의 다움이 조화를 이룰 때 진짜 경쟁력이 생깁니다. 진정한 성장은 고립된 상태에서 이루어지지 않습니다. 우리는 서로의 고유함을
+              인정하고 존중하는 관계 속에서 함께 발전할 수 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="value-header">
+              <div class="value-icon">💡</div>
+              <h3 class="value-title">가능성의 발견</h3>
+            </div>
+            <p class="value-description">숨어 있는 빛, 잠재력, 고유한 경쟁력을 발굴합니다. 모든 사람과 조직 안에는 무한한 가능성이 잠재되어 있습니다. 우리는 체계적인 접근 방식과
+              깊은 대화를 통해 이러한 숨겨진 가능성을 발견하고 활성화하는 데 집중합니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="value-header">
+              <div class="value-icon">📚</div>
+              <h3 class="value-title">탐구와 실행</h3>
+            </div>
+            <p class="value-description">연구하는 만큼 행동하고, 말하는 만큼 실천합니다. 우리는 이론과 실천의 균형을 중요하게 생각합니다. 깊은 탐구와 성찰은 행동의 기반이 되며,
+              실행 없는 지식은 그 가치를 온전히 발휘할 수 없습니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="value-header">
+              <div class="value-icon">🌿</div>
+              <h3 class="value-title">사람 중심</h3>
+            </div>
+            <p class="value-description">문제보다 사람에 주목하며, 변화보다 본질을 탐구합니다. 우리의 모든 활동은 궁극적으로 사람을 위한 것입니다. 다움연구소는 개인과 조직이 자신의
+              본질적 가치와 목적을 발견하도록 돕습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 철학 섹션 -->
+  <section class="section-padding philosophy">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">OUR PHILOSOPHY</span>
+        <h2 class="section-title">다움에 대한 철학적 정의</h2>
+        <p class="section-description">우리가 생각하는 다움의 의미입니다</p>
+      </div>
+
+      <div class="philosophy-content">
+        <h3 class="philosophy-title">다움은 경쟁력이다</h3>
+
+        <div class="quote-box">
+          <p class="quote">"당신이 될 수 있는 유일한 사람이 되세요. 그것이 세상이 당신에게 요구하는 전부입니다."</p>
+          <p class="quote-author">- 랠프 왈도 에머슨(Ralph Waldo Emerson)</p>
+        </div>
+
+        <p class="philosophy-text">경쟁력의 의미는 시대가 바뀌었습니다. 예전의 경쟁력은 타인을 밟고 올라서는 제로섬 게임이었다면, 오늘날의 경쟁력은 자신의 색깔을 분명히 하며 타인과
+          조화를 이루는 상생의 힘입니다. 우리는 누구나 자신만의 고유한 재능과 관점, 가치관을 가지고 있으며, 이러한 '다움'을 발견하고 발현시키는 것이 진정한 경쟁력의 원천이라고 믿습니다.</p>
+
+        <p class="philosophy-text">현대 사회는 획일화된 성공 모델을 추구하는 경향이 있습니다. 많은 사람들이 남들과 비교하며 자신의 고유한 특성을 숨기거나 부정합니다. 그러나 역설적으로,
+          진정한 차별화와 가치 창출은 남들과 다른 자신만의 독특한 관점과 특성에서 비롯됩니다. 스티브 잡스가 말했듯이, "당신의 시간은 제한되어 있습니다. 그러니 다른 사람의 인생을 사는 데 시간을 낭비하지
+          마세요."</p>
+
+        <p class="philosophy-text">다움연구소에서 말하는 '다움'이란 단순히 개성을 표현하는 것을 넘어, 자신의 본질과 목적에 충실한 삶의 방식을 의미합니다. 이는 철학자 아리스토텔레스가
+          말한 '에우다이모니아(eudaimonia)'—덕과 탁월함을 통해 자신의 잠재력을 최대한 발휘하는 상태—와 맥을 같이 합니다. 우리는 각자가 자신의 '다움'을 발견하고 그것에 충실할 때, 개인의
+          행복과 사회적 기여가 동시에 이루어질 수 있다고 믿습니다.</p>
+
+        <p class="philosophy-text">즉, '다움'은 곧 진정한 경쟁력이자 공존의 방식입니다. 다움연구소는 이러한 철학을 바탕으로 개인과 조직의 고유한 정체성을 찾아 세우는 일을 돕습니다.
+          우리는 독일 철학자 니체의 "너 자신이 되라"는 명령을 현대적 맥락에서 재해석하며, 모든 개인과 조직이 자신만의 고유한 '다움'을 발견하고 그것을 세상에 기여할 수 있도록 돕는 것을 사명으로 삼고
+          있습니다.</p>
+
+        <div class="quote-box">
+          <p class="quote">"세상에 단 하나뿐인 나로 살아가는 것. 그것이 진정한 성공의 의미입니다."</p>
+          <p class="quote-author">- 빅터 프랭클(Viktor Frankl)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 단체 사진 섹션 -->
+  <section class="team-photo-section">
+    <div class="container">
+      <div class="team-photo-wrapper">
+        <div class="team-photo">
+          <img src="sample/005.png" alt="다움연구소 팀 단체사진">
+          <div class="photo-caption">
+            <p>다움연구소 팀은 각자의 다움을 발휘하며 함께 성장합니다</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 비전 섹션 -->
+  <section class="section-padding vision" id="vision">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">OUR VISION</span>
+        <h2 class="section-title">다움연구소의 비전</h2>
+        <p class="section-description">"정체성을 찾고 싶은 사람들이 가장 먼저 떠올리는 연구소"</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="vision-card">
+            <div class="vision-year">5년 후</div>
+            <p class="vision-description">다움연구소는 자기다움으로 살아가고자 하는 사람들의 대표 브랜드로 자리 잡습니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="vision-card">
+            <div class="vision-year">10년 후</div>
+            <p class="vision-description">학교나 직장 등 기존 제도 안에서 채워지지 않았던 정체성 혼란의 해답을 제시하는 전문 연구기관이 됩니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="vision-card">
+            <div class="vision-year">미래</div>
+            <p class="vision-description">사람들에게 진정한 경쟁력은 자신의 다움이라는 것을 교육, 콘텐츠, 컨설팅을 통해 널리 알리는 조직이 됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 핵심 사업 섹션 -->
+  <section class="section-padding business-model" id="business">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">OUR BUSINESS</span>
+        <h2 class="section-title">핵심 사업 및 수익 모델</h2>
+        <p class="section-description">다움연구소가 제공하는 서비스입니다</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="business-card">
+            <div class="business-header">
+              <div class="business-icon">🎯</div>
+              <h3 class="business-title">개인 다움 컨설팅</h3>
+            </div>
+            <p class="business-description">퍼스널 브랜딩, 경쟁력 강화<br>진로/커리어 코칭<br>유료 강의/코칭</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="business-card">
+            <div class="business-header">
+              <div class="business-icon">📨</div>
+              <h3 class="business-title">지식 구독 플랫폼</h3>
+            </div>
+            <p class="business-description">개인 맞춤형 솔루션 뉴스레터로 제공<br>월 구독제</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="business-card">
+            <div class="business-header">
+              <div class="business-icon">🏢</div>
+              <h3 class="business-title">조직 다움 워크숍</h3>
+            </div>
+            <p class="business-description">조직 정체성 진단<br>문화 혁신 컨설팅<br>프로젝트 계약</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="business-card">
+            <div class="business-header">
+              <div class="business-icon">🎓</div>
+              <h3 class="business-title">콘텐츠 개발 및 배포</h3>
+            </div>
+            <p class="business-description">정체성 진단 키트<br>워크북, 클래스 제작<br>디지털 상품 판매</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 컨택트 섹션 -->
+  <section class="section-padding contact" id="contact">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">CONTACT US</span>
+        <h2 class="section-title">다움 컨설팅 문의하기</h2>
+        <p class="section-description">나와 우리 조직의 다움을 찾는 여정, 함께 시작해보세요</p>
+      </div>
+
+      <div class="contact-form">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">이름</label>
+            <input type="text" class="form-control" id="name" placeholder="이름을 입력해주세요">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">이메일</label>
+            <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요">
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">연락처</label>
+            <input type="tel" class="form-control" id="phone" placeholder="연락처를 입력해주세요">
+          </div>
+
+          <div class="mb-3">
+            <label for="type" class="form-label">문의 유형</label>
+            <select class="form-select" id="type">
+              <option selected>문의 유형을 선택해주세요</option>
               <option value="personal">개인 다움 컨설팅</option>
               <option value="organization">조직 다움 워크숍</option>
               <option value="newsletter">지식 구독 서비스</option>
@@ -1083,66 +1264,172 @@
               <option value="etc">기타 문의</option>
             </select>
           </div>
-          <div class="field">
-            <label for="message">문의 내용</label>
-            <textarea id="message" placeholder="문의 내용을 입력해주세요"></textarea>
+
+          <div class="mb-4">
+            <label for="message" class="form-label">문의 내용</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="문의 내용을 입력해주세요"></textarea>
           </div>
-          <div class="field">
-            <button type="submit">문의하기</button>
+
+          <button type="submit" class="btn-submit">문의하기</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-logo">다움연구소</div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="footer-info">
+            <p>(주)다움연구소 | 대표자 : 이종수</p>
+            <p>주소 : 서울특별시 강남구 테헤란로 123, 8층 | 이메일 : info@daum-institute.kr | 전화번호 : 02-123-4567</p>
+            <p>사업자등록번호 : 123-45-67890 | 통신판매업 신고번호 : 2023-서울강남-12345</p>
+          </div>
+
+          <div class="footer-copyright">COPYRIGHT© 2023 (주)다움연구소. ALL RIGHT RESERVED.</div>
+
+          <div class="footer-links">
+            <a href="#">개인정보 처리방침</a>
+            <a href="#">이용약관</a>
+            <a href="#">공지사항</a>
           </div>
         </div>
       </div>
     </div>
-    
-    <!-- 푸터 -->
-    <footer>
-      <div class="wrapper">
-        <p class="logo">다움연구소</p>
-        <div class="ad_con">
-          <address>
-            <p>(주)다움연구소  |  대표자 : 이종수</p>
-            <p>주소 : 서울특별시 강남구 테헤란로 123, 8층 | 이메일 : info@daum-institute.kr | 전화번호 : 02-123-4567</p>
-            <p>사업자등록번호 : 123-45-67890 | 통신판매업 신고번호 : 2023-서울강남-12345</p>
-          </address>
-          <span class="copy">COPYRIGHT© 2023 (주)다움연구소. ALL RIGHT RESERVED.</span>
-        </div>
-        <div class="f_btn">
-          <a href="#">개인정보 처리방침</a>
-          <a href="#">이용약관</a>
-          <a href="#">공지사항</a>
-        </div>
-      </div>
-    </footer>
+  </footer>
 
-    <script>
-      // 스크롤 시 헤더 스타일 변경
-      window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-          header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        } else {
-          header.style.boxShadow = 'none';
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // 스무스 스크롤
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerHeight = document.querySelector('header').offsetHeight;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
         }
       });
-      
-      // 스무스 스크롤
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
+    });
+
+    // 슬라이드쇼 기능
+    document.addEventListener('DOMContentLoaded', function () {
+      const slidesContainer = document.querySelector('.slideshow-container');
+      const slidesWrapper = slidesContainer.querySelector('.slides-wrapper');
+      const slides = slidesContainer.querySelectorAll('.slide');
+      const prevBtn = slidesContainer.querySelector('.prev-btn');
+      const nextBtn = slidesContainer.querySelector('.next-btn');
+      const dots = slidesContainer.querySelectorAll('.dot');
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      // 슬라이드 업데이트 함수
+      function updateSlide(index) {
+        currentIndex = index;
+        slidesWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // 도트 업데이트
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      // 자동 슬라이드 타이머
+      let slideInterval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        updateSlide(nextIndex);
+      }, 5000);
+
+      // 다음 버튼 클릭 이벤트
+      nextBtn.addEventListener('click', function () {
+        clearInterval(slideInterval);
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        updateSlide(nextIndex);
+
+        // 타이머 재설정
+        slideInterval = setInterval(() => {
+          nextIndex = (currentIndex + 1) % totalSlides;
+          updateSlide(nextIndex);
+        }, 5000);
+      });
+
+      // 이전 버튼 클릭 이벤트
+      prevBtn.addEventListener('click', function () {
+        clearInterval(slideInterval);
+        let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlide(prevIndex);
+
+        // 타이머 재설정
+        slideInterval = setInterval(() => {
+          let nextIndex = (currentIndex + 1) % totalSlides;
+          updateSlide(nextIndex);
+        }, 5000);
+      });
+
+      // 도트 클릭 이벤트
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          clearInterval(slideInterval);
+          updateSlide(index);
+
+          // 타이머 재설정
+          slideInterval = setInterval(() => {
+            let nextIndex = (currentIndex + 1) % totalSlides;
+            updateSlide(nextIndex);
+          }, 5000);
         });
       });
-    </script>
-  </div>
+
+      // 터치 이벤트 (모바일용)
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      slidesContainer.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(slideInterval);
+      }, false);
+
+      slidesContainer.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+
+        if (touchEndX < touchStartX - 50) {
+          // 왼쪽으로 스와이프 (다음 슬라이드)
+          let nextIndex = (currentIndex + 1) % totalSlides;
+          updateSlide(nextIndex);
+        } else if (touchEndX > touchStartX + 50) {
+          // 오른쪽으로 스와이프 (이전 슬라이드)
+          let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateSlide(prevIndex);
+        }
+
+        // 타이머 재설정
+        slideInterval = setInterval(() => {
+          let nextIndex = (currentIndex + 1) % totalSlides;
+          updateSlide(nextIndex);
+        }, 5000);
+      }, false);
+
+      // 초기 슬라이드 설정
+      updateSlide(0);
+    });
+  </script>
 </body>
+
 </html>
