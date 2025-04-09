@@ -1,0 +1,1158 @@
+:root {
+  --primary: #0A2342;       /* 딥 네이비 - 더 어둡게 조정 */
+  --primary-light: #1E3A5F; /* 중간 네이비 */
+  --primary-dark: #051631;  /* 더 어두운 네이비 */
+  --secondary: #D4AF37;     /* 골드/금색 */
+  --secondary-light: #E5C76B; /* 연한 골드 */
+  --dark: #1A2130;          /* 진한 차콜 그레이 */
+  --gray: #5C6B7A;          /* 중간 블루 그레이 */
+  --light-gray: #EDF2F7;    /* 연한 블루 그레이 */
+  --cream: #F9F7F5;         /* 크림색 (대체 배경) */
+  --white: #FFFFFF;         /* 화이트 */
+  --accent: #C8553D;        /* 강조색 (딥 레드) */
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  background-color: #FAFAFA;
+}
+
+/* 공통 요소 */
+.section-padding {
+  padding: 7rem 0;
+}
+
+.section-title-wrapper {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
+.section-description {
+  font-size: 1.15rem;
+  color: var(--gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* 헤더 */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--dark);
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--secondary);
+}
+
+.navbar .btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  border-radius: 0;
+  padding: 0.6rem 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-primary:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(10, 35, 66, 0.2);
+}
+
+/* 메인 비주얼 */
+.main-visual {
+  padding-top: 6rem;
+  background: linear-gradient(to right, var(--primary-dark), var(--primary));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/1920x1080') center center/cover;
+  opacity: 0.1;
+}
+
+.main-visual-content {
+  position: relative;
+  z-index: 10;
+  color: var(--white);
+  padding: 2rem 0;
+}
+
+.main-visual-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  display: block;
+  letter-spacing: 2px;
+  color: var(--secondary-light);
+  font-family: 'Playfair Display', serif;
+}
+
+.main-visual-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+}
+
+.main-visual-title span {
+  color: var(--secondary);
+  position: relative;
+  display: inline-block;
+}
+
+.main-visual-title span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--secondary);
+}
+
+.main-visual-description {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.main-visual-video {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+/* 제안 섹션 */
+.proposal {
+  background-color: var(--cream);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.proposal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--primary));
+}
+
+.proposal-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  line-height: 1.3;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
+.proposal-title em {
+  color: var(--secondary);
+  font-style: normal;
+  position: relative;
+}
+
+.proposal-title em::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary);
+}
+
+.proposal-description {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.proposal-description em {
+  color: var(--primary);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.proposal-sub {
+  font-size: 1.15rem;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.proposal-sub em {
+  color: var(--secondary);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* 성공 사례 */
+.success-cases {
+  background-color: var(--white);
+  position: relative;
+}
+
+.case-card {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  background-color: var(--white);
+  margin-bottom: 30px;
+}
+
+.case-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.case-img-container {
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.case-img-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(10, 35, 66, 0), rgba(10, 35, 66, 0.3));
+}
+
+.case-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.7s ease;
+}
+
+.case-card:hover .case-img {
+  transform: scale(1.08);
+}
+
+.case-content {
+  padding: 2rem;
+  border-top: 4px solid var(--primary);
+}
+
+.case-tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 0.8rem;
+  border-radius: 0;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.case-tag.secondary {
+  background-color: var(--secondary);
+}
+
+.case-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
+.case-description {
+  font-size: 1.1rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* 핵심 가치 */
+.core-values {
+  background-color: var(--cream);
+  position: relative;
+}
+
+.core-values::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/1920x1080') center center/cover;
+  opacity: 0.03;
+}
+
+.value-card {
+  background-color: var(--white);
+  border-radius: 0;
+  padding: 3rem 2.5rem;
+  height: 100%;
+  transition: all 0.4s ease;
+  position: relative;
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.value-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--secondary);
+  transition: width 0.4s ease;
+  z-index: 2;
+}
+
+.value-card:hover::before {
+  width: 100%;
+}
+
+.value-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.value-icon {
+  font-size: 2.8rem;
+  margin-right: 1.2rem;
+  color: var(--secondary);
+}
+
+.value-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
+.value-description {
+  font-size: 1.05rem;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* 철학 섹션 */
+.philosophy {
+  background-color: var(--white);
+  position: relative;
+}
+
+.philosophy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 35, 66, 0.03) 0%, rgba(10, 35, 66, 0) 100%);
+}
+
+.philosophy-content {
+  background-color: var(--white);
+  padding: 4rem;
+  border-radius: 0;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+  border-left: 4px solid var(--secondary);
+}
+
+.philosophy-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.philosophy-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary);
+}
+
+.philosophy-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  color: var(--gray);
+}
+
+.quote-box {
+  background-color: var(--cream);
+  border-left: 5px solid var(--secondary);
+  padding: 2rem;
+  margin: 2.5rem 0;
+  border-radius: 0;
+  position: relative;
+}
+
+.quote-box::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 5rem;
+  color: rgba(212, 175, 55, 0.1);
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  color: var(--primary);
+  line-height: 1.7;
+  font-family: 'Playfair Display', serif;
+}
+
+.quote-author {
+  font-size: 1.05rem;
+  text-align: right;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* 비전 섹션 */
+.vision {
+  background: linear-gradient(rgba(10, 35, 66, 0.9), rgba(10, 35, 66, 0.9)), url('https://via.placeholder.com/1920x600');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--white);
+  position: relative;
+}
+
+.vision::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(212, 175, 55, 0.05),
+    rgba(212, 175, 55, 0.05) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+.vision-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 0;
+  padding: 3rem;
+  height: 100%;
+  transition: all 0.4s ease;
+  border-top: 3px solid var(--secondary);
+  position: relative;
+}
+
+.vision-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-10px);
+}
+
+.vision-year {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  display: inline-block;
+}
+
+.vision-year::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary);
+}
+
+.vision-description {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* 핵심 사업 */
+.business-model {
+  background-color: var(--primary);
+  color: var(--white);
+  position: relative;
+}
+
+.business-model::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/1920x1080') center center/cover;
+  opacity: 0.04;
+}
+
+.business-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0;
+  padding: 3rem;
+  height: 100%;
+  transition: all 0.4s ease;
+  border-top: 3px solid var(--secondary);
+}
+
+.business-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-10px);
+}
+
+.business-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.business-icon {
+  font-size: 2.8rem;
+  margin-right: 1.2rem;
+  color: var(--secondary);
+}
+
+.business-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.business-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+/* 컨택트 섹션 */
+.contact {
+  background-color: var(--cream);
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(10, 35, 66, 0.02) 0%, rgba(10, 35, 66, 0) 70%);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 3.5rem;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--primary);
+  position: relative;
+  z-index: 1;
+}
+
+.form-control,
+.form-select {
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+  background-color: var(--white);
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(10, 35, 66, 0.2);
+}
+
+/* 푸터 */
+footer {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 4rem 0 2rem;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--primary));
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-info p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.footer-links {
+  margin-top: 2rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.6);
+  margin-right: 2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* 유틸리티 */
+.btn-daum {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background-color: var(--secondary);
+  color: var(--primary-dark);
+  border-radius: 0;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+}
+
+.btn-daum::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-daum:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.btn-daum:hover::before {
+  width: 100%;
+}
+
+.btn-daum.white {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.btn-daum.white:hover {
+  color: var(--white);
+}
+
+.btn-daum.primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(10, 35, 66, 0.2);
+}
+
+.btn-daum.primary::before {
+  background-color: var(--secondary);
+}
+
+.btn-daum.primary:hover {
+  color: var(--primary-dark);
+  box-shadow: 0 8px 25px rgba(10, 35, 66, 0.3);
+}
+
+/* 슬라이드쇼 스타일 */
+.activity-slideshow {
+  padding: 90px 0;
+  background-color: var(--white);
+  position: relative;
+}
+
+.activity-slideshow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--primary));
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+}
+
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(10, 35, 66, 0), rgba(10, 35, 66, 0.3));
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 0;
+  font-size: 24px;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: var(--secondary);
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.dots-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--secondary);
+  transform: scale(1.2);
+}
+
+/* 단체 사진 섹션 스타일 */
+.team-photo-section {
+  padding: 4rem 0 6rem;
+  background-color: var(--cream);
+  position: relative;
+}
+
+.team-photo-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(10, 35, 66, 0.02) 0%, rgba(10, 35, 66, 0) 70%);
+}
+
+.team-photo-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.team-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.team-photo:hover img {
+  transform: scale(1.03);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(10, 35, 66, 0.85), transparent);
+  color: white;
+}
+
+.photo-caption p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Playfair Display', serif;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 991.98px) {
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  .main-visual-title {
+    font-size: 3rem;
+  }
+
+  .proposal-title {
+    font-size: 2.3rem;
+  }
+
+  .vision-year {
+    font-size: 3rem;
+  }
+
+  .philosophy-content {
+    padding: 3rem;
+  }
+  
+  .quote {
+    font-size: 1.25rem;
+  }
+  
+  .slideshow-container {
+    max-width: 90%;
+  }
+  
+  .slide {
+    height: 500px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-padding {
+    padding: 5rem 0;
+  }
+
+  .main-visual {
+    min-height: auto;
+    padding: 9rem 0 5rem;
+  }
+
+  .main-visual-content {
+    text-align: center;
+  }
+
+  .main-visual-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .main-visual-title {
+    font-size: 2.5rem;
+  }
+
+  .main-visual-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .main-visual-description {
+    font-size: 1.1rem;
+  }
+
+  .proposal-title {
+    font-size: 2rem;
+  }
+
+  .proposal-description {
+    font-size: 1.2rem;
+  }
+
+  .philosophy-title {
+    font-size: 1.7rem;
+  }
+
+  .philosophy-text {
+    font-size: 1rem;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+  
+  .value-card, 
+  .business-card, 
+  .vision-card {
+    padding: 2rem;
+  }
+  
+  .contact-form {
+    padding: 2.5rem;
+  }
+  
+  .prev-btn,
+  .next-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .slide {
+    height: 400px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .main-visual-title {
+    font-size: 2.2rem;
+  }
+  
+  .proposal-title {
+    font-size: 1.8rem;
+  }
+  
+  .proposal-description {
+    font-size: 1.1rem;
+  }
+  
+  .case-card, 
+  .value-card, 
+  .business-card, 
+  .vision-card {
+    margin-bottom: 15px;
+  }
+  
+  .philosophy-content {
+    padding: 2rem;
+  }
+  
+  .slide {
+    height: 300px;
+  }
+}
